@@ -43,7 +43,7 @@ fun TampilData(
             TopAppBar(
                 title = { Text(text = stringResource(id = R.string.tampil), color = Color.White) },
                 colors = TopAppBarDefaults.largeTopAppBarColors(
-                    containerColor = colorResource(id = R.color.teal_700)
+                    containerColor = colorResource(id = R.color.purple_500)
                 )
             )
         }
