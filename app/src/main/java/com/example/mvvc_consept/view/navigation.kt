@@ -32,7 +32,7 @@ fun DataApp(
                     backToForm(navController)
                 }, statuasUISiswa = siswa())
             }
-            composable(route = Navigasi.TampilData.name) {
+            composable(route = Navigasi.FormSiswa.name) {
                 FormSiswa(onSubmitButton = {
                     navController.navigate(route = Navigasi.TampilData.name)
                 }, pilihanJK = datajk.jenisK)
