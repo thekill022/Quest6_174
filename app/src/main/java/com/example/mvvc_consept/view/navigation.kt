@@ -30,8 +30,8 @@ fun DataApp(
                 })
             }
             composable(route = Navigasi.TampilData.name) {
-                ViewData()
-            }s
+                FormSiswa()
+            }
         }
     }
 
