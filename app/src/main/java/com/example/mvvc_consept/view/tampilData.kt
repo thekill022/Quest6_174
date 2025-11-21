@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
@@ -23,15 +24,20 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.mvvc_consept.R
 import com.example.mvvc_consept.model.siswa
+import com.example.mvvc_consept.viewmodel.siswaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
-    statuasUISiswa : siswa,
+    siswaViewModel: siswaViewModel,
     onBackBtnClick: () -> Unit
 ) {
+
+    val statuasUISiswa by siswaViewModel.statusUI.collectAsStateWithLifecycle();
+
     val items = listOf(
         Pair(first = stringResource(id = R.string.nama_lengkap), second = statuasUISiswa.nama),
         Pair(first = stringResource(id = R.string.jenis_kelamin), second = statuasUISiswa.gender),

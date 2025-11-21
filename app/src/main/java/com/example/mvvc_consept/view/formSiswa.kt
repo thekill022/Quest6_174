@@ -38,7 +38,8 @@ import com.example.mvvc_consept.viewmodel.siswaViewModel
 fun FormSiswa(
     pilihanJK : List<String>,
     onSubmitButton : () -> Unit,
-    modifier : Modifier = Modifier
+    modifier : Modifier = Modifier,
+    siswaViewMode : siswaViewModel
 ) {
     var nama by rememberSaveable { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
@@ -110,8 +111,7 @@ fun FormSiswa(
                     .fillMaxWidth(1f)
                     .padding(25.dp),
                 onClick = {
-                    val viewSiswa = siswaViewModel()
-                    viewSiswa.setSiswa(listOf<String>(nama, genderTerpilih, alamat))
+                    siswaViewMode.setSiswa(listOf<String>(nama, genderTerpilih, alamat))
                     onSubmitButton()
                 }) {
                 Text(text = stringResource(id = R.string.submit))
