@@ -43,6 +43,7 @@ fun FormSiswa(
     var nama by rememberSaveable { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var genderTerpilih by remember { mutableStateOf("") }
+    val listData : MutableList<String> = mutableListOf(nama, genderTerpilih, alamat)
 
     Scaffold(
         modifier = Modifier,
