@@ -9,6 +9,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.mvvc_consept.model.datajk
+import com.example.mvvc_consept.model.siswa
 
 enum class Navigasi {
     FormSiswa,
@@ -28,10 +30,12 @@ fun DataApp(
             composable(route = Navigasi.TampilData.name) {
                 TampilData(onBackBtnClick = {
                     backToForm(navController)
-                }, statuasUISiswa = )
+                }, statuasUISiswa = siswa())
             }
             composable(route = Navigasi.TampilData.name) {
-                FormSiswa()
+                FormSiswa(onSubmitButton = {
+                    navController.navigate(route = Navigasi.TampilData.name)
+                }, pilihanJK = datajk.jenisK)
             }
         }
     }
