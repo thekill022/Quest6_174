@@ -31,7 +31,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.mvvc_consept.R
-import com.example.mvvc_consept.model.datajk
+import com.example.mvvc_consept.viewmodel.siswaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -109,7 +109,11 @@ fun FormSiswa(
                 modifier = Modifier
                     .fillMaxWidth(1f)
                     .padding(25.dp),
-                onClick = onSubmitButton) {
+                onClick = {
+                    val viewSiswa = siswaViewModel()
+                    viewSiswa.setSiswa(listOf<String>(nama, genderTerpilih, alamat))
+                    onSubmitButton()
+                }) {
                 Text(text = stringResource(id = R.string.submit))
             }
         }
