@@ -78,7 +78,7 @@ fun FormSiswa(
                 thickness = DividerDefaults.Thickness, color = Color.Red
             )
             Row {
-                datajk.jenisK.forEach { item ->
+                pilihanJK.forEach { item ->
                     Row(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
