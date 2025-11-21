@@ -25,8 +25,13 @@ fun DataApp(
             startDestination = Navigasi.FormSiswa.name,
             modifier = Modifier.padding(innerPad)) {
             composable(route = Navigasi.FormSiswa.name) {
-                TampilData(onBackBtnClick = )
+                TampilData(onBackBtnClick = {
+                    navController.navigate(route = Navigasi.TampilData.name)
+                })
             }
+            composable(route = Navigasi.TampilData.name) {
+                ViewData()
+            }s
         }
     }
 
