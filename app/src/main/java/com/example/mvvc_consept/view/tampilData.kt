@@ -29,13 +29,13 @@ import com.example.mvvc_consept.model.siswa
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
-    statuasUISiswa : siswa
+    statuasUISiswa : siswa,
     onBackBtnClick: () -> Unit
 ) {
     val items = listOf(
-        Pair(first = stringResource(id = R.string.nama_lengkap), second = "Contoh Nama"),
-        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
-        Pair(first = stringResource(id = R.string.alamat), second = "Yogyakarta")
+        Pair(first = stringResource(id = R.string.nama_lengkap), second = statuasUISiswa.nama),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second = statuasUISiswa.gender),
+        Pair(first = stringResource(id = R.string.alamat), second = statuasUISiswa.alamat)
     )
 
     Scaffold(modifier = Modifier,
